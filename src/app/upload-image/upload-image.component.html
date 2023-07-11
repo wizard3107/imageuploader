@@ -1,0 +1,33 @@
+<div class="upload-container">
+    <div class="heading-container">
+        Upload Files
+    </div>
+    <div class="upload-buttons">
+        <div class="drag-drop" (drop)="onFileDropped($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)">
+            <i class="bi bi-cloud-arrow-up d-inline-block w-25"></i>
+            <p>Drag and drop files here</p>
+            <p>OR</p>
+            <input type="file" multiple (change)="onFileSelected($event)" id="fileInput" style="display:none" accept="image/*">
+            <button (click)="uploadFile()" class="upload-btn">Upload Files</button>
+        </div>
+    </div>
+    <div class="list-container" *ngIf="selectedImages.length">
+        Uploaded files
+        <ng-container *ngFor="let image of selectedImages">
+            <div class="image-card" (click) = showImage(image)>
+                {{image.name}}
+                <span (click)="removeUploadedFile(image)" class="remove-icon d-inline-block mt-1"></span>
+            </div>
+        </ng-container>
+    </div>
+    <!-- <div class="slider-container" *ngIf="selectedImages.length">
+      <div class="slider">
+          <img [src]="selectedImages[slideIndex].url" [alt]="selectedImages[slideIndex].name">
+      </div>
+      <div class="slider-prev" (click)="prevSlide()">&#10094;</div>
+      <div class="slider-next" (click)="nextSlide()">&#10095;</div>
+    </div> -->
+    <div class="preview" *ngIf="previewImage.url">
+        <img [src]="previewImage.url" [alt]="previewImage.name">
+    </div>
+</div>

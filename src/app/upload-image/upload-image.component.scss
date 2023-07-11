@@ -1,0 +1,80 @@
+@import "../../assets/scss/variables.scss";
+
+.upload-container {
+    background-color: #fff;
+    padding: $uploadContainerPadding;
+    border-radius: $uploadContainerRadius;
+    width: fit-content;
+    margin-top: $margin10;
+    margin-left:auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: $margin20;
+  }
+  .heading-container{
+    font-size: x-large;
+  }
+  .drag-drop {
+        margin-top: $margin15;
+        width: $large;
+        border: 2px dashed $darkGray;
+        padding: $padding20;
+        text-align: center;
+        background-image: linear-gradient(180deg, #b8d3e695, #a4d4eab3);
+        cursor: pointer;
+}
+  .upload-buttons {
+    margin-bottom: $margin10;
+  }
+  .upload-btn{
+    width: $medium;
+    font-size: larger;
+    background-color: $uploadBtnClr;
+    color: $white;
+    border: 0;
+    border-radius: $borderRadius8;
+    margin: $margin5;
+    padding: $padding10;
+    cursor: pointer;
+  }
+
+  .preview {
+    width: $xxlarge;
+    height: $xlarge;
+    overflow: hidden;
+    margin-top: $margin20;
+    position: relative;
+  }
+  
+
+  .preview img {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .list-container {
+    border-radius: $borderRadius4;
+    margin: $margin5;
+    padding: $padding10;
+  }
+  .image-card{
+    min-width: $midlarge;
+    background-color: $lightGray;
+    border-radius: $borderRadius4;
+    margin: $margin5;
+    padding: $padding10;
+    cursor: pointer;
+  }
+  .image-card:hover {
+    transform: scale(1.1);
+    box-shadow: $grayShadow;
+  }
+  .remove-icon{
+    float: right;
+    width: $xxsmall;
+    height: $xxsmall;
+    background-image: url(../../assets/img/cancel.svg);
+  }
